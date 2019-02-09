@@ -6,7 +6,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class StripTest {
 
-    private static final String WHITESPACES = "    \n\t";
+    private static final String WHITESPACES = "\n\t     \u2005";    // FOUR-PER-EM SPACE - whitespace in Unicode, 1/4 width of space
     private static final String NON_WHITESPACE = "aaa";
 
     @Test
@@ -67,13 +67,10 @@ public class StripTest {
     }
 
     @Test
-    public void trimAndSplitShouldDiffer() {
-        // given
-        var toStrip = "\n\t     \u2005";                    // FOUR-PER-EM SPACE - whitespace in Unicode
-
+    public void trimAndStripShouldDiffer() {
         // expect
-        assertThat(toStrip.isEmpty()).isFalse();            // Pre - Java 11
-        assertThat(toStrip.trim().isEmpty()).isFalse();     // Pre - Java 11
-        assertThat(toStrip.strip().isEmpty()).isTrue();     // Java 11
+        assertThat(WHITESPACES.isEmpty()).isFalse();            // Pre - Java 11
+        assertThat(WHITESPACES.trim().isEmpty()).isFalse();     // Pre - Java 11
+        assertThat(WHITESPACES.strip().isEmpty()).isTrue();     // Java 11
     }
 }
