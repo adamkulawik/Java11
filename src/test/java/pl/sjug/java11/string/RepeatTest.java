@@ -2,16 +2,14 @@ package pl.sjug.java11.string;
 
 import org.junit.Test;
 
-import static java.util.stream.Collectors.toList;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class RepeatTest {
 
-    private static final String LINE_ENDING = "\n";
     private static final String NON_WHITESPACE = "aaa";
 
     @Test
-    public void shouldRepeat() {
+    public void shouldRepeatNumberOfTimes() {
         // given
         var toRepeat = NON_WHITESPACE;
 
@@ -23,7 +21,7 @@ public class RepeatTest {
     }
 
     @Test
-    public void shouldNotRepeat() {
+    public void shouldNotRepeatWhenNoRepetitionsOrdered() {
         // given
         var toRepeat = NON_WHITESPACE;
 

@@ -17,6 +17,10 @@ JDK Issue: https://bugs.openjdk.java.net/browse/JDK-8200378
 
 JDK Issue: https://bugs.openjdk.java.net/browse/JDK-8200425
 
+#### repeat()
+
+JDK Issue: https://bugs.openjdk.java.net/browse/JDK-8198296
+
 ### Files
 
 #### readString()
