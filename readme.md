@@ -3,11 +3,15 @@
 
 #### String
 
+Read more: https://dzone.com/articles/new-methods-on-java-strings-with-jdk-11 
+
 ##### isBlank()
 
-JDK Bug System: https://bugs.openjdk.java.net/browse/JDK-8200437
+JDK Issue: https://bugs.openjdk.java.net/browse/JDK-8200437
 
+#### stripXXX()
 
+JDK Issue: https://bugs.openjdk.java.net/browse/JDK-8200378
 
 ### Files
 
@@ -15,13 +19,13 @@ JDK Bug System: https://bugs.openjdk.java.net/browse/JDK-8200437
 #### writeString()
 #### isSameContent()
 
-JDK Bug System: https://bugs.openjdk.java.net/browse/JDK-8201276
+JDK Issue: https://bugs.openjdk.java.net/browse/JDK-8201276
 
 Read more: https://dzone.com/articles/new-jdk-11-files-methods-for-readingwriting-string
 
 ### Predicate
 #### static not(Predicate)
 
-JDK Bug System: https://bugs.openjdk.java.net/browse/JDK-8203428
+JDK Issue: https://bugs.openjdk.java.net/browse/JDK-8203428
 
 Read more: https://dzone.com/articles/predicatenot-coming-to-java

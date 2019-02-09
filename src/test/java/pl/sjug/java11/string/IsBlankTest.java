@@ -22,9 +22,9 @@ public class IsBlankTest {
 
     @Test
     public void shouldBeBlankButIsNotEmpty() {
-        var blankNonEmpty = "\u2005    \n\t";
-        assertThat(blankNonEmpty.trim().isEmpty()).isFalse();   // Pre - Java 8
-        assertThat(blankNonEmpty.codePoints().allMatch(Character::isWhitespace)).isTrue();   // Java 8
-        assertThat(blankNonEmpty.isBlank()).isTrue();           // Java 11
+        var blankNonEmpty = "\u2005    \n\t";                                                   // FOUR-PER-EM SPACE
+        assertThat(blankNonEmpty.trim().isEmpty()).isFalse();                                   // Pre - Java 8
+        assertThat(blankNonEmpty.codePoints().allMatch(Character::isWhitespace)).isTrue();      // Java 8
+        assertThat(blankNonEmpty.isBlank()).isTrue();                                           // Java 11
     }
 }

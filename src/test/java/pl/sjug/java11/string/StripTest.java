@@ -69,11 +69,11 @@ public class StripTest {
     @Test
     public void trimAndSplitShouldDiffer() {
         // given
-        var toStrip = "\n\t     \u2005"; //FOUR-PER-EM SPACE
+        var toStrip = "\n\t     \u2005";                    // FOUR-PER-EM SPACE - whitespace in Unicode
 
         // expect
-        assertThat(toStrip.isEmpty()).isFalse();
-        assertThat(toStrip.trim().isEmpty()).isFalse();
-        assertThat(toStrip.strip().isEmpty()).isTrue();
+        assertThat(toStrip.isEmpty()).isFalse();            // Pre - Java 11
+        assertThat(toStrip.trim().isEmpty()).isFalse();     // Pre - Java 11
+        assertThat(toStrip.strip().isEmpty()).isTrue();     // Java 11
     }
 }
