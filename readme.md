@@ -13,6 +13,10 @@ JDK Issue: https://bugs.openjdk.java.net/browse/JDK-8200437
 
 JDK Issue: https://bugs.openjdk.java.net/browse/JDK-8200378
 
+#### lines()
+
+JDK Issue: https://bugs.openjdk.java.net/browse/JDK-8200425
+
 ### Files
 
 #### readString()
