@@ -8,7 +8,7 @@ public class IsBlankTest {
 
     @Test
     public void shouldBeBlankButNotEmpty() {
-        var blankNonEmpty = "    \n\t";
+        var blankNonEmpty = "\u2005    \n\t";
         assertThat(blankNonEmpty.isBlank()).isTrue();
         assertThat(blankNonEmpty.isEmpty()).isFalse();
     }

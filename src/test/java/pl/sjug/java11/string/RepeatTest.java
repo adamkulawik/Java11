@@ -11,18 +11,6 @@ public class RepeatTest {
     private static final String NON_WHITESPACE = "aaa";
 
     @Test
-    public void shouldGetLines() {
-        // given
-        var text = NON_WHITESPACE + LINE_ENDING + NON_WHITESPACE + LINE_ENDING + NON_WHITESPACE + LINE_ENDING;
-
-        // when
-        var list = text.lines().collect(toList());
-
-        // then
-        assertThat(list).hasSize(3).contains(NON_WHITESPACE);
-    }
-
-    @Test
     public void shouldRepeat() {
         // given
         var toRepeat = NON_WHITESPACE;
@@ -47,7 +35,7 @@ public class RepeatTest {
     }
 
     @Test
-    public void shouldNotRepeatEmptyStrint() {
+    public void shouldNotRepeatEmptyString() {
         // given
         var toRepeat = "";
 
@@ -57,6 +45,4 @@ public class RepeatTest {
         // then
         assertThat(result.isEmpty()).isTrue();
     }
-
-
 }
