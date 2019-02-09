@@ -4,8 +4,8 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Path;
-import java.nio.file.StandardOpenOption;
 
 import static java.nio.file.Files.*;
 import static java.nio.file.Paths.get;
@@ -13,7 +13,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class FilesTest {
 
-    private static final String TEST_TEXT = "testText";
+    private static final String FILENAME = "testText";
     private Path path;
 
     @Before
@@ -21,17 +21,30 @@ public class FilesTest {
         path = get("src/test/resources/file.txt");
     }
 
-    //
     @Test
-    public void shouldWriteAndReadString() throws IOException {
+    public void shouldWriteAndReadStringWithDefaultEncoding() throws IOException {
         // given
         createFile(path);
 
         // when
-        writeString(path, "testText", StandardOpenOption.WRITE);
+        writeString(path, FILENAME);
 
         // then
-        assertThat(readString(path)).isEqualTo(TEST_TEXT);
+        assertThat(readString(path)).isEqualTo(FILENAME);
+
+        delete(path);
+    }
+
+    @Test
+    public void shouldWriteAndReadStringWithExplicitEncoding() throws IOException {
+        // given
+        createFile(path);
+
+        // when
+        writeString(path, FILENAME, StandardCharsets.UTF_8);
+
+        // then
+        assertThat(readString(path, StandardCharsets.UTF_8)).isEqualTo(FILENAME);
 
         delete(path);
     }
