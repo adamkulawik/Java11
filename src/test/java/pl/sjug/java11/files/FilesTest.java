@@ -13,7 +13,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class FilesTest {
 
-    private static final String FILENAME = "testText";
+    private static final String TEST_TEXT = "testText";
     private Path path;
 
     @Before
@@ -27,10 +27,10 @@ public class FilesTest {
         createFile(path);
 
         // when
-        writeString(path, FILENAME);
+        writeString(path, TEST_TEXT);
 
         // then
-        assertThat(readString(path)).isEqualTo(FILENAME);
+        assertThat(readString(path)).isEqualTo(TEST_TEXT);
 
         delete(path);
     }
@@ -41,10 +41,10 @@ public class FilesTest {
         createFile(path);
 
         // when
-        writeString(path, FILENAME, StandardCharsets.UTF_8);
+        writeString(path, TEST_TEXT, StandardCharsets.UTF_8);
 
         // then
-        assertThat(readString(path, StandardCharsets.UTF_8)).isEqualTo(FILENAME);
+        assertThat(readString(path, StandardCharsets.UTF_8)).isEqualTo(TEST_TEXT);
 
         delete(path);
     }

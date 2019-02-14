@@ -22,7 +22,7 @@ public class LinesTest {
     @Test
     public void shouldSplit() {
         // given
-        Stream<String> lines = List.of(text.split("\n")).stream();
+        var lines = List.of(text.split("\n")).stream();
 
         // when
         var list = lines.collect(toList());

@@ -14,15 +14,15 @@ public class PatternTest {
     @Test
     public void shouldAsPredicate() {
         // given
-        Predicate<String> stringPredicate = Pattern.compile("^[a-z]*$").asPredicate();
+        Predicate<String> stringPredicate = Pattern.compile("[a-z]*").asPredicate();
 
-        List<String> strings = asList("a", "ab", "ab1A", "A123aa");
+        var strings = asList("a", "ab", "ab1A", "A123aa");
 
         // when
-        List<String> result = strings.stream().filter(stringPredicate).collect(toList());
+        var result = strings.stream().filter(stringPredicate).collect(toList());
 
         // then
-        assertThat(result).containsExactlyInAnyOrder("a", "ab");
+        assertThat(result).containsExactlyInAnyOrder("a", "ab", "ab1A", "A123aa");
     }
 
     @Test
@@ -30,10 +30,10 @@ public class PatternTest {
         // given
         Predicate<String> stringPredicate = Pattern.compile("[a-z]*").asMatchPredicate();
 
-        List<String> strings = asList("a", "ab", "ab1A", "A123aa");
+        var strings = asList("a", "ab", "ab1A", "A123aa");
 
         // when
-        List<String> result = strings.stream().filter(stringPredicate).collect(toList());
+        var result = strings.stream().filter(stringPredicate).collect(toList());
 
         // then
         assertThat(result).containsExactlyInAnyOrder("a", "ab");
