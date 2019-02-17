@@ -1,4 +1,4 @@
-package pl.sjug.java11;
+package pl.sjug.java11.showcase;
 
 import org.junit.Test;
 
@@ -9,7 +9,7 @@ import static java.util.Arrays.asList;
 import static java.util.stream.Collectors.toList;
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class PatternTest {
+public class PatternDemo {
     @Test
     public void shouldAsPredicate() {
         // given
