@@ -6,7 +6,7 @@ Repo is a showcase of Java 11 API novelties.
 
 In demo package you can find examples that were used on Silesia JUG flashtalk 22th February 2019
 
-They are focused to show API details as clear as possible during talk, so neither static imports nor local type inference is used ther
+They are focused to show API details as clear as possible during talk, so neither static imports nor local type inference is used there
 
 ###### example package
 
