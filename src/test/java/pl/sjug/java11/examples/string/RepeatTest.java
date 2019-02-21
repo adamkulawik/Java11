@@ -1,4 +1,4 @@
-package pl.sjug.java11.string;
+package pl.sjug.java11.examples.string;
 
 import org.junit.Test;
 

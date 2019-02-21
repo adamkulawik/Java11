@@ -1,4 +1,4 @@
-package pl.sjug.java11.files;
+package pl.sjug.java11.examples.files;
 
 import org.junit.Before;
 import org.junit.Test;

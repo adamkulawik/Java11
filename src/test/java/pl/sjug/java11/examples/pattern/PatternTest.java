@@ -1,4 +1,4 @@
-package pl.sjug.java11;
+package pl.sjug.java11.examples.pattern;
 
 import org.junit.Test;
 

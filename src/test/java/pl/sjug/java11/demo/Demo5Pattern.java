@@ -2,6 +2,7 @@ package pl.sjug.java11.demo;
 
 import org.junit.Test;
 
+import java.util.List;
 import java.util.function.Predicate;
 import java.util.regex.Pattern;
 
@@ -15,10 +16,10 @@ public class Demo5Pattern {
         // given
         Predicate<String> stringPredicate = Pattern.compile("[a-z]*").asPredicate();
 
-        var strings = asList("a", "ab", "ab1A", "A123aa");
+        List<String> strings = asList("a", "ab", "ab1A", "A123aa");
 
         // when
-        var result = strings.stream().filter(stringPredicate).collect(toList());
+        List<String> result = strings.stream().filter(stringPredicate).collect(toList());
 
         // then
         assertThat(result).containsExactlyInAnyOrder("a", "ab", "ab1A", "A123aa");
@@ -29,10 +30,10 @@ public class Demo5Pattern {
         // given
         Predicate<String> stringPredicate = Pattern.compile("[a-z]*").asMatchPredicate();
 
-        var strings = asList("a", "ab", "ab1A", "A123aa");
+        List<String> strings = asList("a", "ab", "ab1A", "A123aa");
 
         // when
-        var result = strings.stream().filter(stringPredicate).collect(toList());
+        List<String> result = strings.stream().filter(stringPredicate).collect(toList());
 
         // then
         assertThat(result).containsExactlyInAnyOrder("a", "ab");

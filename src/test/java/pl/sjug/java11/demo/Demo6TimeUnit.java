@@ -12,42 +12,42 @@ public class Demo6TimeUnit {
     @Test
     public void conversion() {
         // given
-        var duration = Duration.ofDays(1);
+        Duration oneDay = Duration.ofDays(1);
 
-        var timeUnit = TimeUnit.HOURS;
+        TimeUnit timeUnit = TimeUnit.HOURS;
 
         // when
-        var convert = timeUnit.convert(duration);
+        long oneDayToHours = timeUnit.convert(oneDay);
 
         // then
-        assertThat(convert).isEqualTo(24);
+        assertThat(oneDayToHours).isEqualTo(24);
     }
 
     @Test
     public void conversionRoundDown() {
         // given
-        var duration = Duration.ofMinutes(119);
+        Duration tenMinutes = Duration.ofMinutes(10);
 
-        var timeUnit = TimeUnit.HOURS;
+        TimeUnit timeUnit = TimeUnit.HOURS;
 
         // when
-        var convert = timeUnit.convert(duration);
+        long tenMinutesToHours = timeUnit.convert(tenMinutes);
 
         // then
-        assertThat(convert).isEqualTo(1);
+        assertThat(tenMinutesToHours).isEqualTo(0);
     }
 
     @Test
     public void shouldConvertHoursToHours() {
         // given
-        var duration = Duration.ofHours(24);
+        Duration twentyFourHours = Duration.ofHours(24);
 
-        var timeUnit = TimeUnit.HOURS;
+        TimeUnit timeUnit = TimeUnit.HOURS;
 
         // when
-        var convert = timeUnit.convert(duration);
+        long twentyFourHoursAsHours = timeUnit.convert(twentyFourHours);
 
         // then
-        assertThat(convert).isEqualTo(24);
+        assertThat(twentyFourHoursAsHours).isEqualTo(24);
     }
 }

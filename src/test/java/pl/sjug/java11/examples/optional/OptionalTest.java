@@ -1,4 +1,4 @@
-package pl.sjug.java11;
+package pl.sjug.java11.examples.optional;
 
 import java.util.Optional;
 import java.util.OptionalDouble;

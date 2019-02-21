@@ -1,4 +1,4 @@
-package pl.sjug.java11;
+package pl.sjug.java11.examples.timeunit;
 
 import java.time.Duration;
 import java.util.concurrent.TimeUnit;

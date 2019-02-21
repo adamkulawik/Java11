@@ -1,12 +1,8 @@
-package pl.sjug.java11.string;
+package pl.sjug.java11.examples.string;
 
 import org.junit.Test;
 
 import java.util.List;
-import java.util.regex.Pattern;
-import java.util.stream.Stream;
-import java.io.BufferedReader;
-import java.io.StringReader;
 
 import static java.util.stream.Collectors.toList;
 import static org.assertj.core.api.Assertions.assertThat;

@@ -5,9 +5,7 @@ import org.junit.Test;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
-import java.nio.file.OpenOption;
 import java.nio.file.Path;
-import java.nio.file.StandardOpenOption;
 
 import static java.nio.file.Files.*;
 import static java.nio.file.Paths.get;
@@ -15,7 +13,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class Demo1Files {
 
-    private static final String TEST_TEXT = "testText";
     private Path path;
 
     @Before
@@ -29,10 +26,10 @@ public class Demo1Files {
         createFile(path);
 
         // when
-        writeString(path, TEST_TEXT, StandardCharsets.UTF_8);
+        writeString(path, "testText", StandardCharsets.UTF_8);
 
         // then
-        assertThat(readString(path, StandardCharsets.UTF_8)).isEqualTo(TEST_TEXT);
+        assertThat(readString(path, StandardCharsets.UTF_8)).isEqualTo("testText");
 
         delete(path);
     }
