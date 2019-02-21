@@ -6,7 +6,7 @@ import java.util.function.Predicate;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class Demo4Predicate {
+public class Demo3Predicate {
 
     // Java 11 way - unwrapped lambda
     @Test

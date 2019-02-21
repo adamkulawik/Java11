@@ -5,13 +5,13 @@ import org.junit.Test;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
 import java.nio.file.Path;
 
-import static java.nio.file.Files.*;
 import static java.nio.file.Paths.get;
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class Demo1Files {
+public class Demo4Files {
 
     private Path path;
 
@@ -23,24 +23,24 @@ public class Demo1Files {
     @Test
     public void shouldWriteAndReadStringWithExplicitEncoding() throws IOException {
         // given
-        createFile(path);
+        Files.createFile(path);
 
         // when
-        writeString(path, "testText", StandardCharsets.UTF_8);
+        Files.writeString(path, "testText", StandardCharsets.UTF_8);
 
         // then
-        assertThat(readString(path, StandardCharsets.UTF_8)).isEqualTo("testText");
+        assertThat(Files.readString(path, StandardCharsets.UTF_8)).isEqualTo("testText");
 
-        delete(path);
+        Files.delete(path);
     }
 
     @Test
     public void shouldFileBeSame() throws IOException {
         // given
-        deleteIfExists(path);
+        Files.deleteIfExists(path);
         var anotherPath = get("src/test/resources/file.txt");
 
         // expect
-        assertThat(isSameFile(path, anotherPath)).isTrue();
+        assertThat(Files.isSameFile(path, anotherPath)).isTrue();
     }
 }

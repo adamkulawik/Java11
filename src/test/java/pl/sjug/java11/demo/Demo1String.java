@@ -6,7 +6,7 @@ import org.junit.Test;
 import static java.util.stream.Collectors.toList;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
-public class Demo2String {
+public class Demo1String {
 
     @Test
     public void isBlank() {

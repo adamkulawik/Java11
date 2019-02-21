@@ -6,7 +6,7 @@ import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class Demo3Optional {
+public class Demo2Optional {
 
     @Test
     public void shouldBeEmpty() {
