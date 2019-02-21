@@ -1,4 +1,4 @@
-package pl.sjug.java11.showcase;
+package pl.sjug.java11.demo;
 
 import org.assertj.core.api.Assertions;
 import org.junit.Test;
@@ -6,7 +6,7 @@ import org.junit.Test;
 import static java.util.stream.Collectors.toList;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
-public class StringDemo {
+public class Demo2String {
 
     @Test
     public void isBlank() {

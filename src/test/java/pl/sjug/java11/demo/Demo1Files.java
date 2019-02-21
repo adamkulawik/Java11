@@ -1,17 +1,19 @@
-package pl.sjug.java11.showcase;
+package pl.sjug.java11.demo;
 
 import org.junit.Before;
 import org.junit.Test;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.OpenOption;
 import java.nio.file.Path;
+import java.nio.file.StandardOpenOption;
 
 import static java.nio.file.Files.*;
 import static java.nio.file.Paths.get;
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class FilesDemo {
+public class Demo1Files {
 
     private static final String TEST_TEXT = "testText";
     private Path path;

@@ -1,4 +1,4 @@
-package pl.sjug.java11.showcase;
+package pl.sjug.java11.demo;
 
 import org.junit.Test;
 
@@ -7,7 +7,7 @@ import java.util.concurrent.TimeUnit;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class TimeUnitDemo {
+public class Demo6TimeUnit {
 
     @Test
     public void conversion() {
