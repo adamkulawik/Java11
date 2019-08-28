@@ -13,35 +13,43 @@ public class SwitchTest {
 
     @Test
     public void preJava13() {
-        assertThat(monthToQuarterPre13(Month.JANUARY)).isEqualTo(Q1);
-        assertThat(monthToQuarter12(Month.JANUARY)).isEqualTo(Q1);
-        assertThat(monthToQuarter13(Month.JANUARY)).isEqualTo(Q1);
+        assertThat(monthToQuarterStatement(Month.JANUARY)).isEqualTo(Q1);
+        assertThat(monthToQuarterMultiValueStatement(Month.JANUARY)).isEqualTo(Q1);
+        assertThat(monthToQuarterExpression(Month.JANUARY)).isEqualTo(Q1);
+        assertThat(monthToQuarterExpressionYield(Month.JANUARY)).isEqualTo(Q1);
     }
 
-    Quarter monthToQuarterPre13(Month month) {
+    Quarter monthToQuarterStatement(Month month) {
+        Quarter quarter;
         switch (month) {
             case JANUARY:
             case FEBRUARY:
             case MARCH:
-                return Q1;
+                quarter = Q1;
+                break;
             case APRIL:
             case MAY:
             case JUNE:
-                return Q2;
+                quarter = Q2;
+                break;
             case JULY:
             case AUGUST:
             case SEPTEMBER:
-                return Q3;
+                quarter = Q3;
+                break;
             case OCTOBER:
             case NOVEMBER:
             case DECEMBER:
-                return Q4;
+                quarter = Q4;
+                break;
+            default:
+                quarter = UNSPECIFIED;
         }
 
-        return UNSPECIFIED;
+        return quarter;
     }
 
-    Quarter monthToQuarter12(Month month) {
+    Quarter monthToQuarterMultiValueStatement(Month month) {
         switch (month) {
             case JANUARY, FEBRUARY, MARCH:
                 return Q1;
@@ -56,12 +64,21 @@ public class SwitchTest {
         return UNSPECIFIED;
     }
 
-    Quarter monthToQuarter13(Month month) {
+    Quarter monthToQuarterExpression(Month month) {
         return switch (month) {
             case JANUARY, FEBRUARY, MARCH -> Q1;
             case APRIL, MAY, JUNE -> Q2;
             case JULY, AUGUST, SEPTEMBER -> Q3;
             case OCTOBER, NOVEMBER, DECEMBER -> Q4;
+        };
+    }
+
+    Quarter monthToQuarterExpressionYield(Month month) {
+        return switch (month) {
+            case JANUARY, FEBRUARY, MARCH: yield Q1;
+            case APRIL, MAY, JUNE: yield Q2;
+            case JULY, AUGUST, SEPTEMBER: yield Q3;
+            case OCTOBER, NOVEMBER, DECEMBER: yield Q4;
         };
     }
 
