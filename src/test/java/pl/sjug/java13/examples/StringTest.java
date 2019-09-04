@@ -9,7 +9,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class StringTest {
 
     // Java 12 novelties
-
     @Test
     public void indentSingleLine() {
         // given
@@ -63,16 +62,20 @@ public class StringTest {
     public void indentMultiLineJava13 () {
         // given
         String text = """
-        text
-        text""";
+          .
+          text
+          text
+          text
+          """;
 
         // when
         String indentedText = text.indent(5);
 
         // then
-        assertThat(indentedText).isEqualTo("     text\n     text\n"); // EOL added
-        assertThat(indentedText).isEqualTo(
-                """
+        assertThat(indentedText).isEqualTo("     .\n     text\n     text\n     text\n"); // EOL added
+        assertThat(indentedText).isEqualTo("""
+              .
+              text
               text
               text
          """); // EOL added

@@ -3,6 +3,7 @@ package pl.sjug.java13.examples;
 import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static pl.sjug.java13.examples.SwitchTest.Month.*;
 import static pl.sjug.java13.examples.SwitchTest.Quarter.Q1;
 import static pl.sjug.java13.examples.SwitchTest.Quarter.Q2;
 import static pl.sjug.java13.examples.SwitchTest.Quarter.Q3;
@@ -11,12 +12,20 @@ import static pl.sjug.java13.examples.SwitchTest.Quarter.UNSPECIFIED;
 
 public class SwitchTest {
 
+    enum Month {
+        JANUARY, FEBRUARY, MARCH, APRIL, MAY, JUNE, JULY, AUGUST, SEPTEMBER, OCTOBER, NOVEMBER, DECEMBER;
+    }
+
+    enum Quarter {
+        Q1, Q2, Q3, Q4, UNSPECIFIED;
+    }
+
     @Test
     public void preJava13() {
-        assertThat(monthToQuarterStatement(Month.JANUARY)).isEqualTo(Q1);
-        assertThat(monthToQuarterMultiValueStatement(Month.JANUARY)).isEqualTo(Q1);
-        assertThat(monthToQuarterExpression(Month.JANUARY)).isEqualTo(Q1);
-        assertThat(monthToQuarterExpressionYield(Month.JANUARY)).isEqualTo(Q1);
+        assertThat(monthToQuarterStatement(JANUARY)).isEqualTo(Q1);
+        assertThat(monthToQuarterMultiValueStatement(JANUARY)).isEqualTo(Q1);
+        assertThat(monthToQuarterExpression(JANUARY)).isEqualTo(Q1);
+        assertThat(monthToQuarterExpressionYield(JANUARY)).isEqualTo(Q1);
     }
 
     Quarter monthToQuarterStatement(Month month) {
@@ -69,7 +78,7 @@ public class SwitchTest {
             case JANUARY, FEBRUARY, MARCH -> Q1;
             case APRIL, MAY, JUNE -> Q2;
             case JULY, AUGUST, SEPTEMBER -> Q3;
-            case OCTOBER, NOVEMBER, DECEMBER -> Q4;
+            case OCTOBER, NOVEMBER, DECEMBER -> {int i =0 ; yield Q4;}
         };
     }
 
@@ -80,13 +89,5 @@ public class SwitchTest {
             case JULY, AUGUST, SEPTEMBER: yield Q3;
             case OCTOBER, NOVEMBER, DECEMBER: yield Q4;
         };
-    }
-
-    enum Month {
-        JANUARY, FEBRUARY, MARCH, APRIL, MAY, JUNE, JULY, AUGUST, SEPTEMBER, OCTOBER, NOVEMBER, DECEMBER;
-    }
-
-    enum Quarter {
-        Q1, Q2, Q3, Q4, UNSPECIFIED;
     }
 }
