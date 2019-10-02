@@ -1,9 +1,9 @@
 package pl.sjug.java11.examples.timeunit;
 
+import org.junit.Test;
+
 import java.time.Duration;
 import java.util.concurrent.TimeUnit;
-
-import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 

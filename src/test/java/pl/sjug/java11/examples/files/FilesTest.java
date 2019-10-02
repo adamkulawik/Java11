@@ -7,7 +7,12 @@ import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Path;
 
-import static java.nio.file.Files.*;
+import static java.nio.file.Files.createFile;
+import static java.nio.file.Files.delete;
+import static java.nio.file.Files.deleteIfExists;
+import static java.nio.file.Files.isSameFile;
+import static java.nio.file.Files.readString;
+import static java.nio.file.Files.writeString;
 import static java.nio.file.Paths.get;
 import static org.assertj.core.api.Assertions.assertThat;
 

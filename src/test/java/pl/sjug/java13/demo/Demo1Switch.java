@@ -1,16 +1,16 @@
-package pl.sjug.java13.examples;
+package pl.sjug.java13.demo;
 
 import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static pl.sjug.java13.examples.SwitchTest.Month.*;
-import static pl.sjug.java13.examples.SwitchTest.Quarter.Q1;
-import static pl.sjug.java13.examples.SwitchTest.Quarter.Q2;
-import static pl.sjug.java13.examples.SwitchTest.Quarter.Q3;
-import static pl.sjug.java13.examples.SwitchTest.Quarter.Q4;
-import static pl.sjug.java13.examples.SwitchTest.Quarter.UNSPECIFIED;
+import static pl.sjug.java13.demo.Demo1Switch.Month.JANUARY;
+import static pl.sjug.java13.demo.Demo1Switch.Quarter.Q1;
+import static pl.sjug.java13.demo.Demo1Switch.Quarter.Q2;
+import static pl.sjug.java13.demo.Demo1Switch.Quarter.Q3;
+import static pl.sjug.java13.demo.Demo1Switch.Quarter.Q4;
+import static pl.sjug.java13.demo.Demo1Switch.Quarter.UNSPECIFIED;
 
-public class SwitchTest {
+public class Demo1Switch {
 
     enum Month {
         JANUARY, FEBRUARY, MARCH, APRIL, MAY, JUNE, JULY, AUGUST, SEPTEMBER, OCTOBER, NOVEMBER, DECEMBER;
@@ -23,11 +23,15 @@ public class SwitchTest {
     @Test
     public void preJava13() {
         assertThat(monthToQuarterStatement(JANUARY)).isEqualTo(Q1);
+
         assertThat(monthToQuarterMultiValueStatement(JANUARY)).isEqualTo(Q1);
+
         assertThat(monthToQuarterExpression(JANUARY)).isEqualTo(Q1);
+
         assertThat(monthToQuarterExpressionYield(JANUARY)).isEqualTo(Q1);
     }
 
+    // TODO: 10/10/2019 pattern matching
     Quarter monthToQuarterStatement(Month month) {
         Quarter quarter;
         switch (month) {
@@ -78,7 +82,7 @@ public class SwitchTest {
             case JANUARY, FEBRUARY, MARCH -> Q1;
             case APRIL, MAY, JUNE -> Q2;
             case JULY, AUGUST, SEPTEMBER -> Q3;
-            case OCTOBER, NOVEMBER, DECEMBER -> {int i =0 ; yield Q4;}
+            case OCTOBER, NOVEMBER, DECEMBER -> Q4;
         };
     }
 

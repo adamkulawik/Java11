@@ -9,7 +9,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class Demo2Optional {
 
     @Test
-    public void shouldBeEmpty() {
+    public void empty() {
         // given
         Optional<String> optional = Optional.empty();
 
@@ -18,7 +18,7 @@ public class Demo2Optional {
     }
 
     @Test
-    public void shouldNotBeEmpty() {
+    public void notEmpty() {
         // given
         Optional<String> optional = Optional.of("text");
 

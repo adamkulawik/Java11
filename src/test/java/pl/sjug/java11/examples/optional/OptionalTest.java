@@ -1,11 +1,11 @@
 package pl.sjug.java11.examples.optional;
 
+import org.junit.Test;
+
 import java.util.Optional;
 import java.util.OptionalDouble;
 import java.util.OptionalInt;
 import java.util.OptionalLong;
-
-import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 

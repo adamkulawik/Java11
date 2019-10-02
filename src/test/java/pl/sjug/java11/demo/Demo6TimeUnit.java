@@ -9,15 +9,15 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class Demo6TimeUnit {
 
+    // TODO: 04/10/2019 pre-11 - overflow problem
+
     @Test
     public void conversion() {
         // given
         Duration oneDay = Duration.ofDays(1);
 
-        TimeUnit timeUnit = TimeUnit.HOURS;
-
         // when
-        long oneDayToHours = timeUnit.convert(oneDay);
+        long oneDayToHours = TimeUnit.HOURS.convert(oneDay);
 
         // then
         assertThat(oneDayToHours).isEqualTo(24);
@@ -28,24 +28,20 @@ public class Demo6TimeUnit {
         // given
         Duration tenMinutes = Duration.ofMinutes(10);
 
-        TimeUnit timeUnit = TimeUnit.HOURS;
-
         // when
-        long tenMinutesToHours = timeUnit.convert(tenMinutes);
+        long tenMinutesToHours = TimeUnit.HOURS.convert(tenMinutes);
 
         // then
         assertThat(tenMinutesToHours).isEqualTo(0);
     }
 
     @Test
-    public void shouldConvertHoursToHours() {
+    public void conversionHoursToHours() {
         // given
         Duration twentyFourHours = Duration.ofHours(24);
 
-        TimeUnit timeUnit = TimeUnit.HOURS;
-
         // when
-        long twentyFourHoursAsHours = timeUnit.convert(twentyFourHours);
+        long twentyFourHoursAsHours = TimeUnit.HOURS.convert(twentyFourHours);
 
         // then
         assertThat(twentyFourHoursAsHours).isEqualTo(24);

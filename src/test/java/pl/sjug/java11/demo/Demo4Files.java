@@ -20,8 +20,9 @@ public class Demo4Files {
         path = get("src/test/resources/file.txt");
     }
 
+    // TODO: 10/10/2019 open options
     @Test
-    public void shouldWriteAndReadStringWithExplicitEncoding() throws IOException {
+    public void writeAndReadStringWithExplicitEncoding() throws IOException {
         // given
         Files.createFile(path);
 
@@ -32,15 +33,5 @@ public class Demo4Files {
         assertThat(Files.readString(path, StandardCharsets.UTF_8)).isEqualTo("testText");
 
         Files.delete(path);
-    }
-
-    @Test
-    public void shouldFileBeSame() throws IOException {
-        // given
-        Files.deleteIfExists(path);
-        var anotherPath = get("src/test/resources/file.txt");
-
-        // expect
-        assertThat(Files.isSameFile(path, anotherPath)).isTrue();
     }
 }
